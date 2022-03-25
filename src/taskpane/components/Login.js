@@ -43,12 +43,16 @@ function Login() {
   const submitHandler = () => {
     if (username === "") {
       setUsernameError("Please Enter User Name");
+      return;
     } else if (password === "") {
       setPasswordError("Please Enter Password");
+      return;
     } else if (username !== "Admin") {
       setUsernameError("Please check the User Name");
+      return;
     } else if (password !== "admin") {
       setPasswordError("Please check the Password");
+      return;
     }
     dispatch(userLogin());
     setUsername("");
